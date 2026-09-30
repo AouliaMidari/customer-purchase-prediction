@@ -1,0 +1,30 @@
+{
+  "model": "SVM (RBF)",
+  "sklearn_version": "1.6.1",
+  "target": "Purchased",
+  "target_labels": {
+    "0": "0",
+    "1": "1"
+  },
+  "numeric": {
+    "Age": {
+      "min": 18.0,
+      "max": 60.0
+    },
+    "EstimatedSalary": {
+      "min": 15000.0,
+      "max": 150000.0
+    }
+  },
+  "categorical": {
+    "Gender": [
+      "Female",
+      "Male"
+    ]
+  },
+  "features_order": [
+    "Gender",
+    "Age",
+    "EstimatedSalary"
+  ]
+}

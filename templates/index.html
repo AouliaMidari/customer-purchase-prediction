@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Prédiction d'achat</title>
+</head>
+<body>
+  <h1>Prédiction d'achat client</h1>
+  <form action="/result" method="POST">
+    {% for field in numeric_fields %}
+      <p>{{ field }}
+        <input type="number" step="any" name="{{ field }}" required>
+      </p>
+    {% endfor %}
+
+    {% for field in categorical_fields %}
+      <p>{{ field }}
+        <select name="{{ field }}" required>
+          {% for v in categories[field] %}
+            <option value="{{ v }}">{{ v }}</option>
+          {% endfor %}
+        </select>
+      </p>
+    {% endfor %}
+
+    <p><input type="submit" value="Prédire"></p>
+  </form>
+</body>
+</html>
